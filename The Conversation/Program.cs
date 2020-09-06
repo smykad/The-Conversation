@@ -88,13 +88,13 @@ namespace The_Conversation
 
             Console.WriteLine();
             Console.WriteLine("Do you like to go the movies {0} ?", userName);
-            userResponse = Console.ReadLine();
+            userResponse = Console.ReadLine().ToLower(); // used ToLower() to fix issues with upper case answers
 
             // pause app
 
             // if the user is a moviegoer continue conversation about movies
 
-            if (userResponse == "yes")
+            if (userResponse == "yes" || userResponse == "y") //added userResponse == "y" in case they type y instead of yes
             {
                 // * What kind of Movies do you like *
                 // set cursor invisible, background colors, foreground colors, and clear screen
@@ -107,11 +107,11 @@ namespace The_Conversation
 
                 Console.WriteLine("It's nice to meet a fellow movie goer!  It is my favorite pastime!");
                 Console.WriteLine();
-                Console.WriteLine("What is your favorite Movie?");
-                favoriteMovie = Console.ReadLine();
+                Console.WriteLine("What is your favorite movie?");
+                favoriteMovie = Console.ReadLine().ToLower(); // used ToLower() to fix issues with upper case answers
 
                 // check and see if their favorite movie is Monty Python and the Holy Grail
-                if (favoriteMovie == "Monty Python and the Holy Grail")
+                if (favoriteMovie == "monty python and the holy grail")
                 {
                     Console.WriteLine("Wow {0}! We both have the same favorite Movie!", userName);
                 }
